@@ -1,11 +1,13 @@
-"""
+print("""
 Created on Wed Sep 19 10:04:10 2018
 @author: aelmes
 
 Edited on Tues Feb 11 11:25 2020
 @author: clevy
 
-"""
+Edits: generate data series for LANCE outputs
+
+""")
 #Import needed packages#########################################################################
 import os, glob, sys, rasterio, pyproj, csv, statistics
 import numpy as np
