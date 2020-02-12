@@ -22,9 +22,11 @@ prdct = "MCD43A3"
 base_dir = '/muddy/data04/charlotte.levy/outputs/MODIS_NRT'
 
 sites_dict = {
-"Desert" : [(45.354367, 87.727491), "h24v04"],
-"Mountain" : [(47.240874, 90.019461), "h24v04"],
-"Foothills" : [(47.069119, 98.768448), "h24v04"]}
+"OKTX" : [35, -100), "h09v05"]}
+
+#"Desert" : [(45.354367, 87.727491), "h24v04"],
+#"Mountain" : [(47.240874, 90.019461), "h24v04"],
+#"Foothills" : [(47.069119, 98.768448), "h24v04"]}
 
 def convert_ll(lat, lon, tile, in_dir):
     # Convert the lat/long point of interest to a row/col location
