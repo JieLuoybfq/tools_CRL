@@ -19,7 +19,7 @@ import matplotlib.pyplot as plt
 years = ["2019"]
 #tile = "h12v04"
 prdct = "MCD43A3"
-base_dir = '/neponset/data04/charlotte.levy/outputs/LANCE'
+base_dir = '/muddy/data04/charlotte.levy/outputs/LANCE'
 
 sites_dict = {
 "Desert" : [(45.354367, 87.727491), "h24v04"],
@@ -61,8 +61,6 @@ def main():
         for site in sites_dict.items():
             print("Processing " + str(year) + " at site: " + site[0])
             in_dir = os.path.join(base_dir, prdct, 'tif', year, site[1][1])
-            if not os.path.exists(in_dir):
-                os.makedirs(in_dir)
             fig_dir = os.path.join(base_dir, 'figs')
             os.chdir(in_dir)
 
