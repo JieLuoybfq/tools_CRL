@@ -22,7 +22,7 @@ prdct = "MCD43A3"
 base_dir = '/muddy/data04/charlotte.levy/outputs/MODIS_NRT'
 
 sites_dict = {
-"OKTX" : [35, -100), "h09v05"]}
+"OKTX" : [(35, -100), "h09v05"]}
 
 #"Desert" : [(45.354367, 87.727491), "h24v04"],
 #"Mountain" : [(47.240874, 90.019461), "h24v04"],
