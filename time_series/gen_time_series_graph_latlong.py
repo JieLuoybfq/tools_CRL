@@ -62,7 +62,7 @@ def main():
     for year in years:
         for site in sites_dict.items():
             print("Processing " + str(year) + " at site: " + site[0])
-            in_dir = os.path.join(base_dir, prdct, 'tif', year, site[1][1])
+            in_dir = os.path.join(base_dir)
             fig_dir = os.path.join(base_dir, 'figs')
             os.chdir(in_dir)
 
