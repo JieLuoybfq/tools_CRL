@@ -19,14 +19,14 @@ import matplotlib.pyplot as plt
 years = ["2019"]
 #tile = "h12v04"
 prdct = "MCD43A3"
-base_dir = '/muddy/data04/charlotte.levy/outputs/LANCE'
+base_dir = '/muddy/data04/charlotte.levy/outputs/LANCE_out'
 
 sites_dict = {
-    "HF" : [(42.53691, -72.17265), "h12v04"]}
+#"HF" : [(42.53691, -72.17265), "h12v04"]}
 #"OKTX" : [(35, -100), "h12v04"]}
-#"Desert" : [(45.354367, 87.727491), "h24v04"],
-#"Mountain" : [(47.240874, 90.019461), "h24v04"],
-#"Foothills" : [(47.069119, 98.768448), "h24v04"]}
+"Desert" : [(45.354367, 87.727491), "h24v04"],
+"Mountain" : [(47.240874, 90.019461), "h24v04"],
+"Foothills" : [(47.069119, 98.768448), "h24v04"]}
 
 def convert_ll(lat, lon, tile, in_dir):
     # Convert the lat/long point of interest to a row/col location
