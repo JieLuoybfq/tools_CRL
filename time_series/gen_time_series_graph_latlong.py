@@ -87,15 +87,15 @@ def main():
                 # The list approach is because of the processing date part of the file
                 # name, which necessitates the wildcard -- this was just the easiest way.
                 wsa_tif_list = glob.glob(os.path.join(in_dir,
-                                                      #'wsa',
+                                                      'wsa',
                                                       '{prdct}.A{year}{day:03d}*wsa_shortwave.tif'.format(prdct=prdct,
                                                                                                           day=day, year=year)))
                 bsa_tif_list = glob.glob(os.path.join(in_dir,
-                                                      #'bsa',
+                                                      'bsa',
                                                       '{prdct}.A{year}{day:03d}*bsa_shortwave.tif'.format(prdct=prdct,
                                                                                                           day=day, year=year)))
                 qa_tif_list = glob.glob(os.path.join(in_dir,
-                                                     #'qa',
+                                                     'qa',
                                                      '{prdct}.A{year}{day:03d}*qa_shortwave.tif'.format(prdct=prdct,
                                                                                                         day=day, year=year)))
                 # See if there is a raster for the date, if not use a fill value for the graph
