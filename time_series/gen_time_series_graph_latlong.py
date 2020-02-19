@@ -160,7 +160,7 @@ def main():
         bsa_smpl_results_df = pd.DataFrame(bsa_swir_mean)
         cmb_smpl_results_df = pd.concat([wsa_smpl_results_df, bsa_smpl_results_df], axis=1, ignore_index=True)
         print("Combined DF below")
-        #cmb_smpl_results_df.set_axis(['wsa', 'bsa'], axis=1, inplace=True)
+        cmb_smpl_results_df.set_axis(['wsa', 'bsa'], axis=1, inplace=True)
         print(cmb_smpl_results_df.to_string())
         # Do plotting and save output
         #print(*doys)
