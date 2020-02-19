@@ -19,7 +19,7 @@ import matplotlib.pyplot as plt
 years = ["2019"]
 #tile = "h12v04"
 prdct = "MCD43A3"
-base_dir = '/muddy/data04/charlotte.levy/outputs/LANCE_out'
+base_dir = '/muddy/data04/charlotte.levy/outputs/LANCE_out/2019_h12v04'
 
 sites_dict = {
 "HF" : [(42.53691, -72.17265), "h12v04"]}
