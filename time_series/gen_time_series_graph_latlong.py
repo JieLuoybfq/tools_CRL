@@ -59,6 +59,13 @@ def draw_plot():
 
 
 def main():
+    # Create empty arrays for mean, sd. also added year through doy
+    #TODO curently these aren't really needed. Probably better way for year through
+    yearL = []
+    siteL = []
+    tileL = []
+    doyL = []
+
     for year in years:
         for site in sites_dict.items():
             print("Processing " + str(year) + " at site: " + site[0])
