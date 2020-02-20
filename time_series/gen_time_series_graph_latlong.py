@@ -164,7 +164,7 @@ def main():
                     #Added the year, site, tile, and doy
                         yearL.append = str(year)
                         siteL.append = location
-                        tileL.append = tile)
+                        tileL.append = tile
                         doyL.append = str(day)
 
             wsa_smpl_results_df = pd.DataFrame(wsa_swir_mean)
