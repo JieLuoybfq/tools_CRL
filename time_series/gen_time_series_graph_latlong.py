@@ -88,10 +88,6 @@ def main():
             wsa_swir_sd = []
             bsa_swir_mean = []
             bsa_swir_sd = []
-            yearL = []
-            siteL = []
-            tileL = []
-            doyL = []
             
             for day in doys:
                 # Open the shortwave white sky albedo band.
