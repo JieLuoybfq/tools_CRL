@@ -175,7 +175,7 @@ def main():
             print(site_df.to_string())
             tile_df = pd.DataFrame(tileL)
             print(tile_df.to_string())
-            doy_df = pd.DataFrame(dayL)
+            doy_df = pd.DataFrame(doyL)
             print(doy_df.to_string())
             cmb_smpl_results_df = pd.concat([doy_df, tile_df, site_df, year_df, wsa_smpl_results_df, bsa_smpl_results_df], axis=1, ignore_index=True)
             print("Combined DF below")
