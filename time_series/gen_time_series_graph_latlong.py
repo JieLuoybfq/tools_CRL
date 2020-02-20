@@ -16,13 +16,13 @@ import matplotlib.pyplot as plt
 
 #Manually declare the time range, product, and base directory. Tile variable is defunct.########
 #years = [ "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019" ]
-years = ["2019", "2020"]
+years = ["2019"]
 tile = "h12v04"
 prdct = "MCD43A3"
 base_dir = '/muddy/data04/charlotte.levy/outputs/LANCE_out/2019_h12v04'
 
 sites_dict = {
-"HF" : [(42.53691, -72.17265), tile],
+#"HF" : [(42.53691, -72.17265), tile],
 "Greylock" : [(42.6376, -73.1662), tile]}
 #"Desert" : [(45.354367, 87.727491), "h24v04"]}
 #"Mountain" : [(47.240874, 90.019461), "h24v04"],
