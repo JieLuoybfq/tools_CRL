@@ -75,12 +75,16 @@ def main():
             lat_long = (site[1][0][0], site[1][0][1])
             print(lat_long)
             
-            # Create empty arrays for mean, sd
-            #TODO curently these aren't really needed
+            # Create empty arrays for mean, sd. also added year through doy
+            #TODO curently these aren't really needed. Probably better way for year through doy
             wsa_swir_mean = []
             wsa_swir_sd = []
             bsa_swir_mean = []
             bsa_swir_sd = []
+            yearL = []
+            siteL = []
+            tileL = []
+            doyL = []
             
             for day in doys:
                 # Open the shortwave white sky albedo band.
@@ -153,13 +157,14 @@ def main():
                         wsa_swir_mean.append(wsa_tmp_mean)
                         bsa_swir_mean.append(bsa_tmp_mean)
                     except:
-                        wsa_swir_mean.append(99999) #Made this NA, so can see where is giving error
-                        bsa_swir_mean.append(99999) #Made this NA, so can see where is giving error
+                        wsa_swir_mean.append(0.0) 
+                        bsa_swir_mean.append(0.0)
+                        #TODO want to make this NA, so can see where is giving error
 
                     #Added the year, site, tile, and doy
                         yearL.append = str(year)
-                        siteL.append = str(site)
-                        tileL.append = str(tile)
+                        siteL.append = location
+                        tileL.append = tile)
                         doyL.append = str(day)
 
             wsa_smpl_results_df = pd.DataFrame(wsa_swir_mean)
