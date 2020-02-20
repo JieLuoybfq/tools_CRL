@@ -171,7 +171,9 @@ def main():
                         doyL.append(str(day))
 
             wsa_smpl_results_df = pd.DataFrame(wsa_swir_mean)
+            print(wsa_smpl_results_df.to_string())
             bsa_smpl_results_df = pd.DataFrame(bsa_swir_mean)
+            print(bsa_smpl_result_df.to_string())
             year_df = pd.DataFrame(yearL)
             print(year_df.to_string())
             site_df = pd.DataFrame(siteL)
