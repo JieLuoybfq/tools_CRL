@@ -162,10 +162,10 @@ def main():
                         #TODO want to make this NA, so can see where is giving error
 
                     #Added the year, site, tile, and doy
-                        yearL.append = str(year)
-                        siteL.append = location
-                        tileL.append = tile
-                        doyL.append = str(day)
+                        yearL.append(str(year))
+                        siteL.append(location)
+                        tileL.append(tile)
+                        doyL.append(str(day))
 
             wsa_smpl_results_df = pd.DataFrame(wsa_swir_mean)
             bsa_smpl_results_df = pd.DataFrame(bsa_swir_mean)
