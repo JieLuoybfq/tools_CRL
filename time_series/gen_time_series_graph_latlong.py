@@ -16,14 +16,14 @@ import matplotlib.pyplot as plt
 
 #Manually declare the time range, product, and base directory. Tile variable is defunct.########
 #years = [ "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019" ]
-years = ["2019"]
-#tile = "h12v04"
+years = ["2019", "2020"]
+tile = "h12v04"
 prdct = "MCD43A3"
-base_dir = '/muddy/data04/charlotte.levy/outputs/LANCE_out/2019_h12v04'
+base_dir = '/muddy/data04/charlotte.levy/outputs/LANCE_out/h12v04'
 
 sites_dict = {
-#"HF" : [(42.53691, -72.17265), "h12v04"]}
-"Greylock" : [(42.6376, -73.1662), "h12v04"]}
+"HF" : [(42.53691, -72.17265), tile],
+"Greylock" : [(42.6376, -73.1662), tile]}
 #"Desert" : [(45.354367, 87.727491), "h24v04"]}
 #"Mountain" : [(47.240874, 90.019461), "h24v04"],
 #"Foothills" : [(47.069119, 98.768448), "h24v04"]}
@@ -153,14 +153,24 @@ def main():
                         wsa_swir_mean.append(wsa_tmp_mean)
                         bsa_swir_mean.append(bsa_tmp_mean)
                     except:
-                        wsa_swir_mean.append(0.0)
-                        bsa_swir_mean.append(0.0)
+                        wsa_swir_mean.append(99999) #Made this NA, so can see where is giving error
+                        bsa_swir_mean.append(99999) #Made this NA, so can see where is giving error
+
+                    #Added the year, site, tile, and doy
+                        yearL.append = str(year)
+                        siteL.append = str(site)
+                        tileL.append = str(tile)
+                        doyL.append = str(day)
 
         wsa_smpl_results_df = pd.DataFrame(wsa_swir_mean)
         bsa_smpl_results_df = pd.DataFrame(bsa_swir_mean)
-        cmb_smpl_results_df = pd.concat([wsa_smpl_results_df, bsa_smpl_results_df], axis=1, ignore_index=True)
+        year_df = pd.Dataframe(yearL)
+        site_df = pd.Dataframe(siteL)
+        tile_df = pd.Dataframe(tileL)
+        doy_df = pd.Dataframe(dayL)
+        cmb_smpl_results_df = pd.concat([doy_df, tile_df, site_df, year_df, wsa_smpl_results_df, bsa_smpl_results_df], axis=1, ignore_index=True)
         print("Combined DF below")
-        cmb_smpl_results_df.set_axis(['wsa', 'bsa'], axis=1, inplace=True)
+        cmb_smpl_results_df.set_axis(['doy', 'tile', 'site', 'year', 'wsa', 'bsa'], axis=1, inplace=True)
         print(cmb_smpl_results_df.to_string())
         # Do plotting and save output
         #print(*doys)
