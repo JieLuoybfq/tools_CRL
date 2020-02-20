@@ -162,30 +162,34 @@ def main():
                         tileL.append = str(tile)
                         doyL.append = str(day)
 
-        wsa_smpl_results_df = pd.DataFrame(wsa_swir_mean)
-        bsa_smpl_results_df = pd.DataFrame(bsa_swir_mean)
-        year_df = pd.Dataframe(yearL)
-        site_df = pd.Dataframe(siteL)
-        tile_df = pd.Dataframe(tileL)
-        doy_df = pd.Dataframe(dayL)
-        cmb_smpl_results_df = pd.concat([doy_df, tile_df, site_df, year_df, wsa_smpl_results_df, bsa_smpl_results_df], axis=1, ignore_index=True)
-        print("Combined DF below")
-        cmb_smpl_results_df.set_axis(['doy', 'tile', 'site', 'year', 'wsa', 'bsa'], axis=1, inplace=True)
-        print(cmb_smpl_results_df.to_string())
-        # Do plotting and save output
-        #print(*doys)
-        #print(*wsa_swir_mean)
-        series_name = location + "_" + str(year)
-        os.chdir(fig_dir)
-        csv_name = str(series_name + "_" + prdct + ".csv")
-        print("writing csv: " + csv_name)
-        # export data to csv
-        cmb_smpl_results_df.to_csv(csv_name, index=False)
-        # with open(csv_name, "w") as export_file:
-        #     wr = csv.writer(export_file, dialect='excel', lineterminator='\n')
-        #     for index, row in cmb_smpl_results_df.iterrows():
-        #         row_data = str(row['wsa'] + "," + row['bsa'])
-        #         wr.writerow(row_data)
+            wsa_smpl_results_df = pd.DataFrame(wsa_swir_mean)
+            bsa_smpl_results_df = pd.DataFrame(bsa_swir_mean)
+            year_df = pd.Dataframe(yearL)
+            print(year_df.to_string())
+            site_df = pd.Dataframe(siteL)
+            print(site_df.to_string())
+            tile_df = pd.Dataframe(tileL)
+            print(tile_df.to_string())
+            doy_df = pd.Dataframe(dayL)
+            print(doy_df.to_string())
+            cmb_smpl_results_df = pd.concat([doy_df, tile_df, site_df, year_df, wsa_smpl_results_df, bsa_smpl_results_df], axis=1, ignore_index=True)
+            print("Combined DF below")
+            cmb_smpl_results_df.set_axis(['doy', 'tile', 'site', 'year', 'wsa', 'bsa'], axis=1, inplace=True)
+            print(cmb_smpl_results_df.to_string())
+            # Do plotting and save output
+            #print(*doys)
+            #print(*wsa_swir_mean)
+            series_name = location + "_" + str(year)
+            os.chdir(fig_dir)
+            csv_name = str(series_name + "_" + prdct + ".csv")
+            print("writing csv: " + csv_name)
+            # export data to csv
+            cmb_smpl_results_df.to_csv(csv_name, index=False)
+            # with open(csv_name, "w") as export_file:
+            #     wr = csv.writer(export_file, dialect='excel', lineterminator='\n')
+            #     for index, row in cmb_smpl_results_df.iterrows():
+            #         row_data = str(row['wsa'] + "," + row['bsa'])
+            #         wr.writerow(row_data)
 
 
 if __name__ == "__main__":
