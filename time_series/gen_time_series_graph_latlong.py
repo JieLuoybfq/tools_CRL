@@ -67,6 +67,14 @@ def main():
     tileL = []
     doyL = []
 
+                
+    # Create empty arrays for mean, sd. also added year through doy
+    #TODO curently these aren't really needed. Probably better way for year through doy
+    wsa_swir_mean = []
+    wsa_swir_sd = []
+    bsa_swir_mean = []
+    bsa_swir_sd = []
+
     for year in years:
         for site in sites_dict.items():
             print("Processing " + str(year) + " at site: " + site[0])
@@ -82,13 +90,7 @@ def main():
             print(site)
             lat_long = (site[1][0][0], site[1][0][1])
             print(lat_long)
-            
-            # Create empty arrays for mean, sd. also added year through doy
-            #TODO curently these aren't really needed. Probably better way for year through doy
-            wsa_swir_mean = []
-            wsa_swir_sd = []
-            bsa_swir_mean = []
-            bsa_swir_sd = []
+
             
             for day in doys:
                 # Open the shortwave white sky albedo band.
