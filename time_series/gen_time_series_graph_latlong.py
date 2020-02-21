@@ -22,8 +22,9 @@ prdct = "MCD43A3"
 base_dir = '/muddy/data04/charlotte.levy/outputs/LANCE_out/2019_h12v04'
 
 sites_dict = {
-#"HF" : [(42.53691, -72.17265), tile],
-"Greylock" : [(42.6376, -73.1662), tile]}
+"HarvardForest" : [(42.53691, -72.17265), tile],
+"Fitchburg" : [(42.5834, -71.8023), tile],
+"GreylockMtn" : [(42.6376, -73.1662), tile]}
 #"Desert" : [(45.354367, 87.727491), "h24v04"]}
 #"Mountain" : [(47.240874, 90.019461), "h24v04"],
 #"Foothills" : [(47.069119, 98.768448), "h24v04"]}
@@ -171,17 +172,11 @@ def main():
                     doyL.append(str(day))
 
             wsa_smpl_results_df = pd.DataFrame(wsa_swir_mean)
-            print(wsa_smpl_results_df.to_string())
             bsa_smpl_results_df = pd.DataFrame(bsa_swir_mean)
-            print(bsa_smpl_results_df.to_string())
             year_df = pd.DataFrame(yearL)
-            print(year_df.to_string())
             site_df = pd.DataFrame(siteL)
-            print(site_df.to_string())
             tile_df = pd.DataFrame(tileL)
-            print(tile_df.to_string())
             doy_df = pd.DataFrame(doyL)
-            print(doy_df.to_string())
             cmb_smpl_results_df = pd.concat([doy_df, tile_df, site_df, year_df, wsa_smpl_results_df, bsa_smpl_results_df], axis=1, ignore_index=True)
             print("Combined DF below")
             cmb_smpl_results_df.set_axis(['doy', 'tile', 'site', 'year', 'wsa', 'bsa'], axis=1, inplace=True)
