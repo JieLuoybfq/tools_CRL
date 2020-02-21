@@ -186,7 +186,7 @@ def main():
             # Do plotting and save output
             #print(*doys)
             #print(*wsa_swir_mean)
-            series_name = location + "_" + str(year)
+            series_name = "ResultsbyLatLon" + "_" + str(year)
             os.chdir(fig_dir)
             csv_name = str(series_name + "_" + prdct + ".csv")
             print("writing csv: " + csv_name)
