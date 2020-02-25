@@ -153,15 +153,15 @@ def main():
                     bsa_swir_subset_flt = np.multiply(bsa_swir_subset, 0.001)
                        
                     # Add each point to the temporary list
-                    wsa_smpl_results.append(wsa_swir_subset_flt)
-                    bsa_smpl_results.append(bsa_swir_subset_flt)
+                    #wsa_smpl_results.append(wsa_swir_subset_flt)
+                    #bsa_smpl_results.append(bsa_swir_subset_flt)
                     #TODO this try is not really needed, but it doesn't hurt to leave it in case
                     #I want to incorporate the multiple-points-per-sample idea
                     #try:
-                    wsa_tmp_mean = statistics.mean(wsa_smpl_results)
-                    bsa_tmp_mean = statistics.mean(bsa_smpl_results)
-                    wsa_swir_mean.append(wsa_tmp_mean)
-                    bsa_swir_mean.append(bsa_tmp_mean)
+                    #wsa_tmp_mean = statistics.mean(wsa_smpl_results)
+                    #bsa_tmp_mean = statistics.mean(bsa_smpl_results)
+                    wsa_swir_mean.append(wsa_swir_subset_flt)
+                    bsa_swir_mean.append(bsa_swir_subset_flt)
                     #except:
                     #    wsa_swir_mean.append(0.0) 
                     #    bsa_swir_mean.append(0.0)
