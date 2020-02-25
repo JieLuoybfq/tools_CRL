@@ -22,9 +22,9 @@ prdct = "MCD43A3N"
 base_dir = '/muddy/data04/charlotte.levy/outputs/LANCE_orig/2019_h12v04'
 
 sites_dict = {
-"HarvardForest" : [(42.53691, -72.17265), tile],
-"Fitchburg" : [(42.5834, -71.8023), tile],
-"GreylockMtn" : [(42.6376, -73.1662), tile]}
+"HarvardForest" : [(42.53691, -72.17265), tile]}
+#"Fitchburg" : [(42.5834, -71.8023), tile],
+#"GreylockMtn" : [(42.6376, -73.1662), tile]}
 #"Desert" : [(45.354367, 87.727491), "h24v04"]}
 #"Mountain" : [(47.240874, 90.019461), "h24v04"],
 #"Foothills" : [(47.069119, 98.768448), "h24v04"]}
