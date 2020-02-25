@@ -18,8 +18,8 @@ import matplotlib.pyplot as plt
 #years = [ "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019" ]
 years = ["2019"]
 tile = "h12v04"
-prdct = "MCD43A3"
-base_dir = '/muddy/data04/charlotte.levy/outputs/LANCE_out/2019_h12v04'
+prdct = "MCD43A3N"
+base_dir = '/muddy/data04/charlotte.levy/outputs/LANCE_orig/2019_h12v04'
 
 sites_dict = {
 "HarvardForest" : [(42.53691, -72.17265), tile],
@@ -110,7 +110,7 @@ def main():
                                                                                                         day=day, year=year)))
                 # See if there is a raster for the date, if not use a fill value for the graph
                 if len(wsa_tif_list) == 0 or len(bsa_tif_list) == 0 or len(qa_tif_list) == 0:
-                    print('File not found: MCD43A3.A{year}{day:03d}*wsa_shortwave.tif'.format(day=day, year=year))
+                    print('File not found: MCD43A3N.A{year}{day:03d}*wsa_shortwave.tif'.format(day=day, year=year))
                     wsa_swir_subset_flt = float('nan')
                     bsa_swir_subset_flt = float('nan')
                 elif len(wsa_tif_list) > 1:
