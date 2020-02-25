@@ -18,13 +18,13 @@ import matplotlib.pyplot as plt
 #years = [ "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019" ]
 years = ["2019"]
 tile = "h12v04"
-prdct = "MCD43A3N"
+prdct = "MCD43A3"
 base_dir = '/muddy/data04/charlotte.levy/outputs/LANCE_orig/2019_h12v04'
 
 sites_dict = {
-"HarvardForest" : [(42.53691, -72.17265), tile]}
-#"Fitchburg" : [(42.5834, -71.8023), tile],
-#"GreylockMtn" : [(42.6376, -73.1662), tile]}
+"HarvardForest" : [(42.53691, -72.17265), tile],
+"Fitchburg" : [(42.5834, -71.8023), tile],
+"GreylockMtn" : [(42.6376, -73.1662), tile]}
 #"Desert" : [(45.354367, 87.727491), "h24v04"]}
 #"Mountain" : [(47.240874, 90.019461), "h24v04"],
 #"Foothills" : [(47.069119, 98.768448), "h24v04"]}
@@ -110,7 +110,7 @@ def main():
                                                                                                         day=day, year=year)))
                 # See if there is a raster for the date, if not use a fill value for the graph
                 if len(wsa_tif_list) == 0 or len(bsa_tif_list) == 0 or len(qa_tif_list) == 0:
-                    print('File not found: MCD43A3N.A{year}{day:03d}*wsa_shortwave.tif'.format(day=day, year=year))
+                    print('File not found: MCD43A3.A{year}{day:03d}*wsa_shortwave.tif'.format(day=day, year=year))
                     wsa_swir_subset_flt = float('nan')
                     bsa_swir_subset_flt = float('nan')
                 elif len(wsa_tif_list) > 1:
@@ -157,16 +157,15 @@ def main():
                     bsa_smpl_results.append(bsa_swir_subset_flt)
                     #TODO this try is not really needed, but it doesn't hurt to leave it in case
                     #I want to incorporate the multiple-points-per-sample idea
-                    try:
-                        wsa_tmp_mean = statistics.mean(wsa_smpl_results)
-                        bsa_tmp_mean = statistics.mean(bsa_smpl_results)
-                        wsa_swir_mean.append(wsa_tmp_mean)
-                        bsa_swir_mean.append(bsa_tmp_mean)
-                    except:
-                        wsa_swir_mean.append(0.0) 
-                        bsa_swir_mean.append(0.0)
-                        #TODO want to make this NA, so can see where is giving error
-
+                    #try:
+                    wsa_tmp_mean = statistics.mean(wsa_smpl_results)
+                    bsa_tmp_mean = statistics.mean(bsa_smpl_results)
+                    wsa_swir_mean.append(wsa_tmp_mean)
+                    bsa_swir_mean.append(bsa_tmp_mean)
+                    #except:
+                    #    wsa_swir_mean.append(0.0) 
+                    #    bsa_swir_mean.append(0.0)
+                     
                     #Added the year, site, tile, and doy
                     yearL.append(str(year))
                     siteL.append(location)
