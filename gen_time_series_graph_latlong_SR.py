@@ -18,8 +18,8 @@ import matplotlib.pyplot as plt
 #years = [ "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019" ]
 years = ["2019"]
 tile = "h12v04"
-prdct = "MCD43A3"
-base_dir = '/muddy/data04/charlotte.levy/outputs/MODIS_60/2019_h12v04'
+prdct = "MOD09GA" #MCD43A3
+base_dir = '/muddy/data04/charlotte.levy/outputs/LANCE/2019/h12v04/SR'
 
 sites_dict = {
 "HarvardForest" : [(42.53691, -72.17265), tile],
