@@ -107,38 +107,37 @@ def main():
                 # The list approach is because of the processing date part of the file
                 # name, which necessitates the wildcard -- this was just the easiest way.
                 b1_tif_list = glob.glob(os.path.join(in_dir,
-                                                      'b1',
+                                                      #'b1'
                                                       '{prdct}.A{year}{day:03d}*sr_b1.tif'.format(prdct=prdct,
                                                                                                           day=day, year=year)))
                 b2_tif_list = glob.glob(os.path.join(in_dir,
-                                                      'b2',
+                                                      #'b2',
                                                       '{prdct}.A{year}{day:03d}*sr_b2.tif'.format(prdct=prdct,
                                                                                                           day=day, year=year)))
                 b3_tif_list = glob.glob(os.path.join(in_dir,
-                                                     'b3',
+                                                     #'b3',
                                                      '{prdct}.A{year}{day:03d}*sr_b3.tif'.format(prdct=prdct,
                                                                                                         day=day, year=year)))
                 b4_tif_list = glob.glob(os.path.join(in_dir,
-                                                      'b4',
+                                                      #'b4',
                                                       '{prdct}.A{year}{day:03d}*sr_b4.tif'.format(prdct=prdct,
                                                                                                           day=day, year=year)))
                 b5_tif_list = glob.glob(os.path.join(in_dir,
-                                                      'b5',
+                                                      #'b5',
                                                       '{prdct}.A{year}{day:03d}*sr_b5.tif'.format(prdct=prdct,
                                                                                                           day=day, year=year)))
                 b6_tif_list = glob.glob(os.path.join(in_dir,
-                                                     'b6',
+                                                     #'b6',
                                                      '{prdct}.A{year}{day:03d}*sr_b6.tif'.format(prdct=prdct,
                                                                                                         day=day, year=year)))
                 b7_tif_list = glob.glob(os.path.join(in_dir,
-                                                     'b7',
+                                                     #'b7',
                                                      '{prdct}.A{year}{day:03d}*sr_b7.tif'.format(prdct=prdct,
                                                                                                         day=day, year=year)))
 
-
                 # See if there is a raster for the date, if not use a fill value for the graph
                 if len(b1_tif_list) == 0 or len(b2_tif_list) == 0 or len(b3_tif_list) == 0 or len(b4_tif_list) == 0 or len(b5_tif_list) == 0 or len(b6_tif_list) == 0 or len(b7_tif_list) == 0:
-                    print('File not found: MCD43A3.A{year}{day:03d}*b.tif'.format(day=day, year=year))
+                    print('File not found: MOD09GA.A{year}{day:03d}*sr_bX.tif'.format(day=day, year=year))
                     b1_swir_subset_flt = float('nan')
                     b2_swir_subset_flt = float('nan')
                     b3_swir_subset_flt = float('nan')
