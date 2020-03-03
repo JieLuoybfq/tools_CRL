@@ -147,7 +147,7 @@ def main():
                     b6_swir_subset_flt = float('nan')
                     b7_swir_subset_flt = float('nan')
 
-                elif len(b1_tif_list) == 0 or len(b2_tif_list) == 0 or len(b3_tif_list) == 0 or len(b4_tif_list) == 0 or len(b5_tif_list) == 0 or len(b6_tif_list) == 0 or len(b7_tif_list) == 0: > 1:
+                elif len(b1_tif_list) > 1 or len(b2_tif_list) > 1 or len(b3_tif_list) > 1 or len(b4_tif_list) > 1 or len(b5_tif_list) > 1 or len(b6_tif_list) > 1 or len(b7_tif_list) > 1:
                     print('Multiple matching files found for same date!')
                     sys.exit()
                 else:
