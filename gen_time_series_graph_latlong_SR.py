@@ -194,9 +194,9 @@ def main():
                     #several locations to get one mean value, rather than get the value of a given
                     #tower's pixel. Maybe modifiy to average within a bounding box or something?
                     #for smpl in sites_dict.values():
-                    smp_rc = convert_ll(site[1][0][0], site[1][0][1], site[1][1], os.path.join(in_dir, 'sr'))
+                    smp_rc = convert_ll(site[1][0][0], site[1][0][1], site[1][1], os.path.join(in_dir))
                     print("Sample row/col: " + str(smp_rc))
-                    print("Directory: " + os.path.join(in_dir, 'sr'))
+                    print("Directory: " + os.path.join(in_dir))
                     #wsa_swir_subset = wsa_swir_masked_qa[smp_rc]
                     b1_swir_subset_flt = np.multiply(b1_band, 0.001)
                     b2_swir_subset_flt = np.multiply(b2_band, 0.001)
