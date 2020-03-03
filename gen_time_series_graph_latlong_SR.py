@@ -161,18 +161,18 @@ def main():
 
                     # Open tifs as gdal ds but using rasterio for simplicity
                     b1_raster = rasterio.open(b1_tif)
-                    b1_band = b1_raster.read(1)
                     b2_raster = rasterio.open(b2_tif)
-                    b2_band = b2_raster.read(1)
                     b3_raster = rasterio.open(b3_tif)
-                    b3_band = b3_raster.read(1)
                     b4_raster = rasterio.open(b4_tif)
-                    b4_band = b4_raster.read(1)
                     b5_raster = rasterio.open(b5_tif)
-                    b5_band = b5_raster.read(1)
                     b6_raster = rasterio.open(b6_tif)
-                    b6_band = b6_raster.read(1)
                     b7_raster = rasterio.open(b7_tif)
+                    b1_band = b1_raster.read(1)
+                    b2_band = b2_raster.read(1)
+                    b3_band = b3_raster.read(1)
+                    b4_band = b4_raster.read(1)
+                    b5_band = b5_raster.read(1)
+                    b6_band = b6_raster.read(1)
                     b7_band = b7_raster.read(1)
 
                     # Mask out nodata values
@@ -197,23 +197,29 @@ def main():
                     smp_rc = convert_ll(site[1][0][0], site[1][0][1], site[1][1], os.path.join(in_dir))
                     print("Sample row/col: " + str(smp_rc))
                     print("Directory: " + os.path.join(in_dir))
-                    #wsa_swir_subset = wsa_swir_masked_qa[smp_rc]
-                    #b1_swir_subset_flt = np.multiply(b1_band, 1)
-                    #b2_swir_subset_flt = np.multiply(b2_band, 1)
-                    #b3_swir_subset_flt = np.multiply(b3_band, 1)
-                    #b4_swir_subset_flt = np.multiply(b4_band, 1)
-                    #b5_swir_subset_flt = np.multiply(b5_band, 1)
-                    #b6_swir_subset_flt = np.multiply(b6_band, 1)
-                    #b7_swir_subset_flt = np.multiply(b7_band, 1)
+                    b1_swir_subset = b1_band[smp_rc]
+                    b2_swir_subset = b2_band[smp_rc]
+                    b3_swir_subset = b3_band[smp_rc]
+                    b4_swir_subset = b4_band[smp_rc]
+                    b5_swir_subset = b5_band[smp_rc]
+                    b6_swir_subset = b6_band[smp_rc]
+                    b7_swir_subset = b7_band[smp_rc]
+                    b1_swir_subset_flt = np.multiply(b1_band, 1)
+                    b2_swir_subset_flt = np.multiply(b2_band, 1)
+                    b3_swir_subset_flt = np.multiply(b3_band, 1)
+                    b4_swir_subset_flt = np.multiply(b4_band, 1)
+                    b5_swir_subset_flt = np.multiply(b5_band, 1)
+                    b6_swir_subset_flt = np.multiply(b6_band, 1)
+                    b7_swir_subset_flt = np.multiply(b7_band, 1)
                        
                     # Add each point to the temporary list
-                    b1_smpl_results.append(b1_band[smp_rc])
-                    b2_smpl_results.append(b2_band[smp_rc])
-                    b3_smpl_results.append(b3_band[smp_rc])
-                    b4_smpl_results.append(b4_band[smp_rc])
-                    b5_smpl_results.append(b5_band[smp_rc])
-                    b6_smpl_results.append(b6_band[smp_rc])
-                    b7_smpl_results.append(b7_band[smp_rc])
+                    b1_smpl_results.append(b1_swir_subset_flt)
+                    b2_smpl_results.append(b2_swir_subset_flt)
+                    b3_smpl_results.append(b3_swir_subset_flt)
+                    b4_smpl_results.append(b4_swir_subset_flt)
+                    b5_smpl_results.append(b5_swir_subset_flt)
+                    b6_smpl_results.append(b6_swir_subset_flt)
+                    b7_smpl_results.append(b7_swir_subset_flt)
 
                     #TODO this try is not really needed, but it doesn't hurt to leave it in case
                     #I want to incorporate the multiple-points-per-sample idea
