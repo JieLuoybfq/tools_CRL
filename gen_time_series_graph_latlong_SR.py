@@ -198,22 +198,22 @@ def main():
                     print("Sample row/col: " + str(smp_rc))
                     print("Directory: " + os.path.join(in_dir))
                     #wsa_swir_subset = wsa_swir_masked_qa[smp_rc]
-                    b1_swir_subset_flt = np.multiply(b1_band, 0.001)
-                    b2_swir_subset_flt = np.multiply(b2_band, 0.001)
-                    b3_swir_subset_flt = np.multiply(b3_band, 0.001)
-                    b4_swir_subset_flt = np.multiply(b4_band, 0.001)
-                    b5_swir_subset_flt = np.multiply(b5_band, 0.001)
-                    b6_swir_subset_flt = np.multiply(b6_band, 0.001)
-                    b7_swir_subset_flt = np.multiply(b7_band, 0.001)
+                    #b1_swir_subset_flt = np.multiply(b1_band, 1)
+                    #b2_swir_subset_flt = np.multiply(b2_band, 1)
+                    #b3_swir_subset_flt = np.multiply(b3_band, 1)
+                    #b4_swir_subset_flt = np.multiply(b4_band, 1)
+                    #b5_swir_subset_flt = np.multiply(b5_band, 1)
+                    #b6_swir_subset_flt = np.multiply(b6_band, 1)
+                    #b7_swir_subset_flt = np.multiply(b7_band, 1)
                        
                     # Add each point to the temporary list
-                    b1_smpl_results.append(b1_swir_subset_flt)
-                    b2_smpl_results.append(b2_swir_subset_flt)
-                    b3_smpl_results.append(b3_swir_subset_flt)
-                    b4_smpl_results.append(b4_swir_subset_flt)
-                    b5_smpl_results.append(b5_swir_subset_flt)
-                    b6_smpl_results.append(b6_swir_subset_flt)
-                    b7_smpl_results.append(b7_swir_subset_flt)
+                    b1_smpl_results.append(b1_band)
+                    b2_smpl_results.append(b2_band)
+                    b3_smpl_results.append(b3_band)
+                    b4_smpl_results.append(b4_band)
+                    b5_smpl_results.append(b5_band)
+                    b6_smpl_results.append(b6_band)
+                    b7_smpl_results.append(b7_band)
 
                     #TODO this try is not really needed, but it doesn't hurt to leave it in case
                     #I want to incorporate the multiple-points-per-sample idea
