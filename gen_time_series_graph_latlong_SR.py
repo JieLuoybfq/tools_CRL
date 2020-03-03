@@ -137,7 +137,7 @@ def main():
 
                 # See if there is a raster for the date, if not use a fill value for the graph
                 if len(b1_tif_list) == 0 or len(b2_tif_list) == 0 or len(b3_tif_list) == 0 or len(b4_tif_list) == 0 or len(b5_tif_list) == 0 or len(b6_tif_list) == 0 or len(b7_tif_list) == 0:
-                    print('File not found: MOD09GA.A{year}{day:03d}*sr_bX.tif'.format(day=day, year=year))
+                    print('File not found: {prdct}.A{year}{day:03d}*sr_bX.tif'.format(prdct=prdct, day=day, year=year))
                     b1_swir_subset_flt = float('nan')
                     b2_swir_subset_flt = float('nan')
                     b3_swir_subset_flt = float('nan')
@@ -150,7 +150,7 @@ def main():
                     print('Multiple matching files found for same date!')
                     sys.exit()
                 else:
-                    print('Found file: ' + ' {prdct}.A{year}{day:03d}*b.tif'.format(prdct=prdct, day=day, year=year))
+                    print('Found file: {prdct}.A{year}{day:03d}*sr_bX.tif'.format(prdct=prdct, day=day, year=year))
                     b1_tif = b1_tif_list[0]
                     b2_tif = b2_tif_list[0]
                     b3_tif = b3_tif_list[0]
@@ -207,13 +207,13 @@ def main():
                     #b7_swir_subset_flt = np.multiply(b7_band, 1)
                        
                     # Add each point to the temporary list
-                    b1_smpl_results.append(b1_band)
-                    b2_smpl_results.append(b2_band)
-                    b3_smpl_results.append(b3_band)
-                    b4_smpl_results.append(b4_band)
-                    b5_smpl_results.append(b5_band)
-                    b6_smpl_results.append(b6_band)
-                    b7_smpl_results.append(b7_band)
+                    b1_smpl_results.append(b1_band[smp_rc])
+                    b2_smpl_results.append(b2_band[smp_rc])
+                    b3_smpl_results.append(b3_band[smp_rc])
+                    b4_smpl_results.append(b4_band[smp_rc])
+                    b5_smpl_results.append(b5_band[smp_rc])
+                    b6_smpl_results.append(b6_band[smp_rc])
+                    b7_smpl_results.append(b7_band[smp_rc])
 
                     #TODO this try is not really needed, but it doesn't hurt to leave it in case
                     #I want to incorporate the multiple-points-per-sample idea
