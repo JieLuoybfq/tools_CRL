@@ -231,67 +231,66 @@ def main():
                     print(statistics.mean(b7_smpl_results))
 
 
- '''
-#TODO this try is not really needed, but it doesn't hurt to leave it in case
+ 
+                    #TODO this try is not really needed, but it doesn't hurt to leave it in case
                     #I want to incorporate the multiple-points-per-sample idea
-                    try:
-                        b1_tmp_mean = statistics.mean(b1_smpl_results)
-                        b1_swir_mean.append(b1_swir_subset_flt)
-                        b2_tmp_mean = statistics.mean(b2_smpl_results)
-                        b2_swir_mean.append(b2_swir_subset_flt)
-                        b3_tmp_mean = statistics.mean(b3_smpl_results)
-                        b3_swir_mean.append(b3_swir_subset_flt)
-                        b4_tmp_mean = statistics.mean(b4_smpl_results)
-                        b4_swir_mean.append(b4_swir_subset_flt)
-                        b5_tmp_mean = statistics.mean(b5_smpl_results)
-                        b5_swir_mean.append(b5_swir_subset_flt)
-                        b6_tmp_mean = statistics.mean(b6_smpl_results)
-                        b6_swir_mean.append(b6_swir_subset_flt)
-                        b7_tmp_mean = statistics.mean(b7_smpl_results)
-                        b7_swir_mean.append(b7_swir_subset_flt)
-                    except:
-                        b1_swir_mean.append(0.0) 
-                        b2_swir_mean.append(0.0) 
-                        b3_swir_mean.append(0.0) 
-                        b4_swir_mean.append(0.0) 
-                        b5_swir_mean.append(0.0) 
-                        b6_swir_mean.append(0.0) 
-                        b7_swir_mean.append(0.0) 
+ #                   try:
+ #                       b1_tmp_mean = statistics.mean(b1_smpl_results)
+ #                       b1_swir_mean.append(b1_swir_subset_flt)
+ #                       b2_tmp_mean = statistics.mean(b2_smpl_results)
+ #                       b2_swir_mean.append(b2_swir_subset_flt)
+ #                       b3_tmp_mean = statistics.mean(b3_smpl_results)
+ #                       b3_swir_mean.append(b3_swir_subset_flt)
+ #                       b4_tmp_mean = statistics.mean(b4_smpl_results)
+ #                       b4_swir_mean.append(b4_swir_subset_flt)
+ #                       b5_tmp_mean = statistics.mean(b5_smpl_results)
+ #                       b5_swir_mean.append(b5_swir_subset_flt)
+ #                       b6_tmp_mean = statistics.mean(b6_smpl_results)
+ #                       b6_swir_mean.append(b6_swir_subset_flt)
+ #                       b7_tmp_mean = statistics.mean(b7_smpl_results)
+ #                       b7_swir_mean.append(b7_swir_subset_flt)
+ #                   except:
+ #                       b1_swir_mean.append(0.0) 
+ #                       b2_swir_mean.append(0.0) 
+ #                       b3_swir_mean.append(0.0) 
+ #                       b4_swir_mean.append(0.0) 
+  #                      b5_swir_mean.append(0.0) 
+   #                     b6_swir_mean.append(0.0) 
+    #                    b7_swir_mean.append(0.0) 
                      
                     #Added the year, site, tile, and doy
-                    yearL.append(str(year))
-                    siteL.append(location)
-                    tileL.append(tile)
-                    doyL.append(str(day))
-
-            b1_smpl_results_df = pd.DataFrame(b1_swir_mean)
-            b2_smpl_results_df = pd.DataFrame(b2_swir_mean)
-            b3_smpl_results_df = pd.DataFrame(b3_swir_mean)
-            b4_smpl_results_df = pd.DataFrame(b4_swir_mean)
-            b5_smpl_results_df = pd.DataFrame(b5_swir_mean)
-            b6_smpl_results_df = pd.DataFrame(b6_swir_mean)
-            b7_smpl_results_df = pd.DataFrame(b7_swir_mean)
-            year_df = pd.DataFrame(yearL)
-            site_df = pd.DataFrame(siteL)
-            tile_df = pd.DataFrame(tileL)
-            doy_df = pd.DataFrame(doyL)
-            cmb_smpl_results_df = pd.concat([doy_df, tile_df, site_df, year_df, b1_smpl_results_df, b2_smpl_results_df, b3_smpl_results_df, b4_smpl_results_df, b5_smpl_results_df, b6_smpl_results_df, b7_smpl_results_df], axis=1, ignore_index=True)
-            print("Combined DF below")
-            cmb_smpl_results_df.set_axis(['doy', 'tile', 'site', 'year', 'b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7'], axis=1, inplace=True)
-            print(cmb_smpl_results_df.to_string())
+ #                   yearL.append(str(year))
+  #                  siteL.append(location)
+   #                 tileL.append(tile)
+    #                doyL.append(str(day))
+#
+ #           b1_smpl_results_df = pd.DataFrame(b1_swir_mean)
+  #          b2_smpl_results_df = pd.DataFrame(b2_swir_mean)
+  #          b3_smpl_results_df = pd.DataFrame(b3_swir_mean)
+   #         b4_smpl_results_df = pd.DataFrame(b4_swir_mean)
+    #        b5_smpl_results_df = pd.DataFrame(b5_swir_mean)
+     #       b6_smpl_results_df = pd.DataFrame(b6_swir_mean)
+      #      b7_smpl_results_df = pd.DataFrame(b7_swir_mean)
+#            year_df = pd.DataFrame(yearL)
+ #           site_df = pd.DataFrame(siteL)
+  #          tile_df = pd.DataFrame(tileL)
+   ##         doy_df = pd.DataFrame(doyL)
+     #       cmb_smpl_results_df = pd.concat([doy_df, tile_df, site_df, year_df, b1_smpl_results_df, b2_smpl_results_df, b3_smpl_results_df, b4_smpl_results_df, b5_smpl_results_df, b6_smpl_results_df, b7_smpl_results_df], axis=1, ignore_index=True)
+      #      print("Combined DF below")
+       #     cmb_smpl_results_df.set_axis(['doy', 'tile', 'site', 'year', 'b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7'], axis=1, inplace=True)
+        #    print(cmb_smpl_results_df.to_string())
             # Do plotting and save output
-            series_name = "ResultsbyLatLon" + "_" + str(year)
-            os.chdir(fig_dir)
-            csv_name = str(series_name + "_" + prdct + ".csv")
-            print("writing csv: " + csv_name)
+#            series_name = "ResultsbyLatLon" + "_" + str(year)
+ #           os.chdir(fig_dir)
+  #          csv_name = str(series_name + "_" + prdct + ".csv")
+   #         print("writing csv: " + csv_name)
             # export data to csv
-            cmb_smpl_results_df.to_csv(csv_name, index=False)
+#            cmb_smpl_results_df.to_csv(csv_name, index=False)
             # with open(csv_name, "w") as export_file:
             #     wr = csv.writer(export_file, dialect='excel', lineterminator='\n')
             #     for index, row in cmb_smpl_results_df.iterrows():
             #         row_data = str(row['wsa'] + "," + row['bsa'])
             #         wr.writerow(row_data)
-'''
 
 if __name__ == "__main__":
     main()
