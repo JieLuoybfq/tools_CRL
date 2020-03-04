@@ -204,13 +204,13 @@ def main():
                     b5_swir_subset = b5_band[smp_rc]
                     b6_swir_subset = b6_band[smp_rc]
                     b7_swir_subset = b7_band[smp_rc]
-                    b1_swir_subset_flt = np.multiply(b1_band, 1)
-                    b2_swir_subset_flt = np.multiply(b2_band, 1)
-                    b3_swir_subset_flt = np.multiply(b3_band, 1)
-                    b4_swir_subset_flt = np.multiply(b4_band, 1)
-                    b5_swir_subset_flt = np.multiply(b5_band, 1)
-                    b6_swir_subset_flt = np.multiply(b6_band, 1)
-                    b7_swir_subset_flt = np.multiply(b7_band, 1)
+                    b1_swir_subset_flt = np.multiply(b1_swir_subset, 1)
+                    b2_swir_subset_flt = np.multiply(b2_swir_subset, 1)
+                    b3_swir_subset_flt = np.multiply(b3_swir_subset, 1)
+                    b4_swir_subset_flt = np.multiply(b4_swir_subset, 1)
+                    b5_swir_subset_flt = np.multiply(b5_swir_subset, 1)
+                    b6_swir_subset_flt = np.multiply(b6_swir_subset, 1)
+                    b7_swir_subset_flt = np.multiply(b7_swir_subset, 1)
                        
                     # Add each point to the temporary list
                     b1_smpl_results.append(b1_swir_subset_flt)
