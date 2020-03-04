@@ -221,7 +221,17 @@ def main():
                     b6_smpl_results.append(b6_swir_subset_flt)
                     b7_smpl_results.append(b7_swir_subset_flt)
 
-                    #TODO this try is not really needed, but it doesn't hurt to leave it in case
+
+                    print(statistics.mean(b1_smpl_results))
+                    print(statistics.mean(b2_smpl_results))
+                    print(statistics.mean(b3_smpl_results))
+                    print(statistics.mean(b4_smpl_results))
+                    print(statistics.mean(b5_smpl_results))
+                    print(statistics.mean(b6_smpl_results))
+                    print(statistics.mean(b7_smpl_results))
+
+
+ '''                   #TODO this try is not really needed, but it doesn't hurt to leave it in case
                     #I want to incorporate the multiple-points-per-sample idea
                     try:
                         b1_tmp_mean = statistics.mean(b1_smpl_results)
@@ -239,7 +249,7 @@ def main():
                         b7_tmp_mean = statistics.mean(b7_smpl_results)
                         b7_swir_mean.append(b7_swir_subset_flt)
                     except:
-                        b1_swir_mean.append(0.999) 
+                        b1_swir_mean.append(0.0) 
                         b2_swir_mean.append(0.0) 
                         b3_swir_mean.append(0.0) 
                         b4_swir_mean.append(0.0) 
@@ -280,7 +290,7 @@ def main():
             #     for index, row in cmb_smpl_results_df.iterrows():
             #         row_data = str(row['wsa'] + "," + row['bsa'])
             #         wr.writerow(row_data)
-
+'''
 
 if __name__ == "__main__":
     main()
