@@ -204,13 +204,13 @@ def main():
                     b5_swir_subset = b5_band[smp_rc]
                     b6_swir_subset = b6_band[smp_rc]
                     b7_swir_subset = b7_band[smp_rc]
-                    b1_swir_subset_flt = np.multiply(b1_band, 100)
-                    b2_swir_subset_flt = np.multiply(b2_band, 100)
-                    b3_swir_subset_flt = np.multiply(b3_band, 100)
-                    b4_swir_subset_flt = np.multiply(b4_band, 100)
-                    b5_swir_subset_flt = np.multiply(b5_band, 100)
-                    b6_swir_subset_flt = np.multiply(b6_band, 100)
-                    b7_swir_subset_flt = np.multiply(b7_band, 100)
+                    b1_swir_subset_flt = np.multiply(b1_band, 1)
+                    b2_swir_subset_flt = np.multiply(b2_band, 1)
+                    b3_swir_subset_flt = np.multiply(b3_band, 1)
+                    b4_swir_subset_flt = np.multiply(b4_band, 1)
+                    b5_swir_subset_flt = np.multiply(b5_band, 1)
+                    b6_swir_subset_flt = np.multiply(b6_band, 1)
+                    b7_swir_subset_flt = np.multiply(b7_band, 1)
                        
                     # Add each point to the temporary list
                     b1_smpl_results.append(b1_swir_subset_flt)
@@ -239,7 +239,7 @@ def main():
                         b7_tmp_mean = statistics.mean(b7_smpl_results)
                         b7_swir_mean.append(b7_swir_subset_flt)
                     except:
-                        b1_swir_mean.append(0.0) 
+                        b1_swir_mean.append(0.999) 
                         b2_swir_mean.append(0.0) 
                         b3_swir_mean.append(0.0) 
                         b4_swir_mean.append(0.0) 
