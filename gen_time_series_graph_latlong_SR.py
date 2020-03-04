@@ -252,7 +252,7 @@ def main():
                     yearL.append(str(year))
                     siteL.append(location)
                     tileL.append(tile)
-                   doyL.append(str(day))
+                    doyL.append(str(day))
 
             b1_smpl_results_df = pd.DataFrame(b1_swir_mean)
             b2_smpl_results_df = pd.DataFrame(b2_swir_mean)
