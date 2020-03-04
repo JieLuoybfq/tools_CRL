@@ -231,7 +231,8 @@ def main():
                     print(statistics.mean(b7_smpl_results))
 
 
- '''                   #TODO this try is not really needed, but it doesn't hurt to leave it in case
+ '''
+#TODO this try is not really needed, but it doesn't hurt to leave it in case
                     #I want to incorporate the multiple-points-per-sample idea
                     try:
                         b1_tmp_mean = statistics.mean(b1_smpl_results)
