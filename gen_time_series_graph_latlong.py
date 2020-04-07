@@ -19,7 +19,7 @@ import matplotlib.pyplot as plt
 years = ["2019"]
 tile = "h12v04"
 prdct = "MCD43A3"
-base_dir = '/muddy/data04/charlotte.levy/outputs/ModDist_1'
+base_dir = '/muddy/data04/charlotte.levy/outputs/AltWeight_v1.1'
 
 sites_dict = {
 "HarvardForest" : [(42.53691, -72.17265), tile],
