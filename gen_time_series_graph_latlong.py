@@ -19,7 +19,7 @@ import matplotlib.pyplot as plt
 years = ["2019"]
 tile = "h12v04"
 prdct = "MCD43A3"
-base_dir = '/muddy/data04/charlotte.levy/outputs/AltWeight_v1.1'
+base_dir = '/muddy/data04/charlotte.levy/outputs/Exp6_STD/'
 
 sites_dict = {
 "HarvardForest" : [(42.53691, -72.17265), tile],
@@ -132,9 +132,9 @@ def main():
 
                     # Mask out nodata values
                     wsa_swir_masked = np.ma.masked_array(wsa_band, wsa_band == 32767)
-                    wsa_swir_masked_qa = np.ma.masked_array(wsa_swir_masked, qa_band > 1)
+                    wsa_swir_masked_qa = np.ma.masked_array(wsa_swir_masked, qa_band != 1)
                     bsa_swir_masked = np.ma.masked_array(bsa_band, bsa_band == 32767)
-                    bsa_swir_masked_qa = np.ma.masked_array(bsa_swir_masked, qa_band > 1)
+                    bsa_swir_masked_qa = np.ma.masked_array(bsa_swir_masked, qa_band != 1)
 
                     # Spatial subset based on coordinates of interest.
                     wsa_smpl_results = []
