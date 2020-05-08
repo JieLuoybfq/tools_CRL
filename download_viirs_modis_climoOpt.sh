@@ -68,7 +68,7 @@ while [[ "$cur_date" < "$end_date" ]]; do
     file="${short_name}*${tile}*.${fmt}"
     cur_date=$(date -I -d "$cur_date+1 day")
    # dl_dir_out=${dl_dir_out}${short_name}/${fmt}/${year}/${tile}
-    dl_dir_out=${dl_dir_out}/${tile}/${short_name}/${year}
+    dl_dir_out=${dl_dir_out}${tile}/${short_name}/${year}
     if [ ! -r $dl_dir_out ]; then
 	mkdir -p $dl_dir_out
     fi
