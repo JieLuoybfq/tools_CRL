@@ -4,7 +4,7 @@
 # Charlotte Levy
 # Created 2020-05-07
 
-usage="Usage: ./call_download.sh" [-s start date (YYY-MM-DD)] [-e end date (YYYY-MM-DD)] [-n product short name e.g.MCD43A3] [-d download dir]"
+usage="Usage: ./call_download.sh [-s start date (YYYY-MM-DD)] [-e end date (YYYY-MM-DD)] [-n product short name e.g.MCD43A3] [-d download dir]"
 while getopts ":s:e:n:d:" arg; do
 	case $arg in
 		s) start_date=$OPTARG;;
