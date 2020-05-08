@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr//bin/bash
 
 # Script to specify tiles for download
 # Charlotte Levy
@@ -22,7 +22,7 @@ tiles="h10v04 h09v04"
 for val in $tiles; do
 	echo "Beginning tile: " $val
 	echo "Calling download function"
-	./home/charlotte.levy/code/tools_CRL/download_viirs_modis_climoOpt.sh -s ${start_date} -e ${end_date} -n ${short_name} -t $val -d ${dl_dir}
+	./download_viirs_modis_climoOpt.sh -s ${start_date} -e ${end_date} -n ${short_name} -t $val -d ${dl_dir}
 	echo "Tile " $val "complete."
 done
 
